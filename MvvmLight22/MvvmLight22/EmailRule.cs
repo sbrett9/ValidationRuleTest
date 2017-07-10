@@ -8,7 +8,17 @@
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            return ValidationResult.ValidResult;
+            var email = ViewModelLocator.Instance.Main.Email;
+            var repeatEmail = ViewModelLocator.Instance.Main.RepeatEmail;
+
+            if (email != repeatEmail)
+            {
+                return new ValidationResult(false, "Emails are not identical.");
+            }
+            else
+            {
+                return ValidationResult.ValidResult;
+            }
         }
     }
 }

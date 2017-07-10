@@ -1,14 +1,24 @@
 ﻿
 
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
-using MvvmLight22.Model;
-
 namespace MvvmLight22.ViewModel
 {
+    #region Using Declarations
+
+    using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.Ioc;
+    using Microsoft.Practices.ServiceLocation;
+    using Model;
+
+    #endregion
+
     public class ViewModelLocator
     {
+        protected static ViewModelLocator instance;
+        public static ViewModelLocator Instance
+        {
+            get { return instance; }
+        }
+
         static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
@@ -25,6 +35,13 @@ namespace MvvmLight22.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
+        public ViewModelLocator()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
 
         public MainViewModel Main
         {

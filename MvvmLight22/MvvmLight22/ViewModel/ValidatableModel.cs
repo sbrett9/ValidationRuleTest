@@ -19,11 +19,9 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChanged(string propertyName)
+        public new void RaisePropertyChanged(string propertyName)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
+            base.RaisePropertyChanged(propertyName);
             ValidateAsync();
         }
 
