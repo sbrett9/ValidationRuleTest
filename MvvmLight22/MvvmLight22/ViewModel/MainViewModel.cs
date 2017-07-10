@@ -47,6 +47,21 @@
             set { _repeatEmail = value; RaisePropertyChanged("RepeatEmail"); }
         }
 
+        public string Explanation
+        {
+            get
+            {
+                string x =
+                    "INotifyDataErrorInfo and Validation Rules are two approaches for validation in WPF.\n" +
+                    "The validation logic involves checking to see if two email addresses in two seperate text boxes are identical.\n" +
+                    "The expected behavior for both techniques is that on load, if the data is not identical, validation error templates should surround the controls in error.\n" +
+                    "The observed behavior is that validation using INotifyDataErrorInfo does not show the validation error template on data load, and that Validation Rule usage does.\n" +
+                    "The reason for this is due to the fact that Validation Rules can be made to execute their validation on binding expression read (as opposed to write, or setting of the data).\n" +
+                    "There does not seem to be a way to accomplish the same feat when using the INotifyDataErrorInfo approach.\n";
+
+                return x;
+            }
+        }
 
         public MainViewModel()
         {

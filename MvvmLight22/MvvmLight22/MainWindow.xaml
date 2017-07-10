@@ -29,8 +29,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <GroupBox Header="Validation Using INotifyDataErrorInfo">
+        <TextBlock TextWrapping="Wrap" 
+                   Text="{Binding Path=Explanation}"/>
+        <GroupBox Grid.Row="1" Header="Validation Using INotifyDataErrorInfo">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -70,7 +73,7 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Row="1" Header="Validation Using Validation Rules">
+        <GroupBox Grid.Row="2" Header="Validation Using Validation Rules">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
