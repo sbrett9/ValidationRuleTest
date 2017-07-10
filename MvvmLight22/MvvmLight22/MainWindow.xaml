@@ -13,7 +13,7 @@
                       SizeToContent="WidthAndHeight"
                       mc:Ignorable="d ignore">
     <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Click">
+        <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Path=OnLoad}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>

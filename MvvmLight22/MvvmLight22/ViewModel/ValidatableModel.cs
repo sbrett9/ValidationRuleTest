@@ -17,8 +17,6 @@
     {
         private ConcurrentDictionary<string, List<string>> _errors = new ConcurrentDictionary<string, List<string>>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public new void RaisePropertyChanged(string propertyName)
         {
             base.RaisePropertyChanged(propertyName);

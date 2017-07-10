@@ -73,8 +73,11 @@
 
         private void ExecuteOnLoad()
         {
-            RaisePropertyChanged(()=>Email);
-            RaisePropertyChanged(()=>RepeatEmail);
+            //Manually signal properties changed in order to force INotifyDataErrorInfo validation.
+            //Bear in mind, INotifyDataErrorInfo requires the user perform some operation like this in order to 
+            //establish validation errors on the ui controls, whereas ValidationRules do it as a matter of course 
+            //((ValidatableModel)this).RaisePropertyChanged(nameof(Email));
+            //((ValidatableModel)this).RaisePropertyChanged(nameof(RepeatEmail));
         }
 
         public static ValidationResult SameEmailValidate(object obj, ValidationContext context)
