@@ -57,7 +57,10 @@
                     "The expected behavior for both techniques is that on load, if the data is not identical, validation error templates should surround the controls in error.\n" +
                     "The observed behavior is that validation using INotifyDataErrorInfo does not show the validation error template on data load, and that Validation Rule usage does.\n" +
                     "The reason for this is due to the fact that Validation Rules can be made to execute their validation on binding expression read (as opposed to write, or setting of the data).\n" +
-                    "There does not seem to be a way to accomplish the same feat when using the INotifyDataErrorInfo approach.\n";
+                    "There does not seem to be a way to accomplish the same feat when using the INotifyDataErrorInfo approach.\n" +
+                    "\n" +
+                    "The Validation using INotifyDataErrorInfo requires the user to perform an update to the text field in order for it to re-evaluate its validation rule.\n" +
+                    "The Validation using ValidationRules does not require this.";
 
                 return x;
             }
